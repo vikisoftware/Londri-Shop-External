@@ -56,7 +56,7 @@
                 android:gravity="center"
                 android:text="@string/back_to_order"
                 android:textColor="@color/black"
-                android:textSize="@dimen/length_20" />
+                android:textSize="@dimen/font_20" />
 
 
             <ImageView
@@ -341,8 +341,9 @@
                         android:fontFamily="@font/poppins_medium"
                         android:gravity="center"
                         android:paddingStart="7dp"
+                        android:layout_toStartOf="@id/orderPaid"
                         android:paddingEnd="7dp"
-                        android:text="(Proccesing)"
+                        android:text="@string/proccesing"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_small" />
 
@@ -361,20 +362,7 @@
                         android:textSize="@dimen/text_size_small"
                         android:transitionName="orderPaid" />
 
-                    <RelativeLayout
-                        android:id="@+id/edit_order_rl"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentEnd="true"
-                        android:visibility="gone">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:padding="10dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/ic_edit" />
-                    </RelativeLayout>
                 </RelativeLayout>
 
 
@@ -400,10 +388,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="@dimen/margin_large"
-                        android:layout_marginEnd="20dp"
-                        android:layout_toRightOf="@+id/cloths_heading_tv"
+                        android:layout_toEndOf="@+id/cloths_heading_tv"
                         android:fontFamily="@font/poppins_semi_bold"
                         android:text="@string/Items"
+                        android:layout_toStartOf="@id/price_heading_tv"
                         android:textColor="#4062E5"
                         android:textSize="@dimen/text_size_medium" />
 
@@ -458,6 +446,7 @@
                         android:layout_toEndOf="@id/v1"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/zero"
+                        android:layout_toStartOf="@id/adultPrice"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium" />
 
@@ -469,7 +458,7 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -495,6 +484,7 @@
                         android:id="@+id/kidCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/kidPrice"
                         android:layout_marginStart="60dp"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:layout_toEndOf="@id/v11"
@@ -511,7 +501,7 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -542,6 +532,7 @@
                         android:layout_toEndOf="@id/v111"
                         android:fontFamily="@font/poppins_regular"
                         android:text="@string/zero"
+                        android:layout_toStartOf="@id/housePrice"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium" />
 
@@ -553,7 +544,7 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -573,6 +564,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
+                        android:layout_toStartOf="@id/deliveryCharge"
                         android:text="@string/pdelivery"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium" />
@@ -586,13 +578,13 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="#219653"
                         android:textSize="@dimen/text_size_medium" />
 
                 </RelativeLayout>
 
-                //GST
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -603,6 +595,8 @@
 
                     <TextView
                         android:id="@+id/gst_tv"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/gst_charges_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
@@ -619,14 +613,14 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
 
                 </RelativeLayout>
 
-                //offer
+
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -637,6 +631,8 @@
 
                     <TextView
                         android:id="@+id/offer_tv"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/offer_charges_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_regular"
@@ -653,7 +649,7 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold" />
@@ -688,9 +684,11 @@
 
                     <TextView
                         android:id="@+id/v1111"
+                        android:layout_toStartOf="@id/totalPrice"
+                        android:layout_toEndOf="@id/view_cloths_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
+                        android:gravity="center"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="@string/total"
                         android:textColor="@color/black"
@@ -706,7 +704,7 @@
                         android:layout_marginStart="@dimen/margin_small"
                         android:layout_marginEnd="@dimen/margin_small"
                         android:fontFamily="@font/poppins_light"
-                        android:text="00"
+                        android:text="@string/zero"
                         android:textColor="@color/black"
                         android:textSize="@dimen/text_size_medium"
                         android:textStyle="bold"
@@ -714,35 +712,7 @@
 
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:visibility="gone">
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="some text herer"
-                        android:textSize="@dimen/text_size_medium" />
-
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="@dimen/margin_small"
-                        android:layout_marginEnd="@dimen/margin_small"
-                        android:text="some texte here"
-                        android:textColor="@color/grey_700"
-                        android:textSize="@dimen/text_size_medium" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
+                <!--<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="30dp"
@@ -765,9 +735,10 @@
                         android:text="some text here also"
                         android:textColor="@color/black" />
 
-                </RelativeLayout>
+                </RelativeLayout>-->
 
                 <RelativeLayout
+                    android:id="@+id/rlChangePrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
@@ -810,8 +781,16 @@
                     android:layout_marginTop="@dimen/length_20"
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/blue_border_dark"
-                    android:visibility="gone">
-
+                    android:visibility="visible">
+                    <ImageView
+                        android:id="@+id/map_pin_iv"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/got_to_customer_tv"
+                        android:layout_marginEnd="@dimen/length_10"
+                        android:src="@drawable/ic_near_me"
+                        android:contentDescription="@string/zero" />
 
                     <TextView
                         android:id="@+id/got_to_customer_tv"
@@ -821,62 +800,16 @@
                         android:fontFamily="@font/muli_black"
                         android:gravity="center"
                         android:text="@string/Go_To_Customer_Locations"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:ignore="RelativeOverlap" />
 
-                    <ImageView
-                        android:id="@+id/map_pin_iv"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="@dimen/length_10"
-                        android:layout_toStartOf="@+id/got_to_customer_tv"
-                        android:src="@drawable/ic_near_me" />
+
 
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="@dimen/margin_large"
-                    android:layout_marginEnd="20dp"
-                    android:gravity="center_vertical">
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/boyImg"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:contentDescription="@string/zero"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/playstore_icon"
-                        android:visibility="gone"
-                        app:riv_corner_radius="20dp" />
 
 
-                    <TextView
-                        android:id="@+id/boyName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:layout_alignParentEnd="false"
-                        android:layout_marginStart="@dimen/margin_medium"
-                        android:layout_marginEnd="@dimen/margin_small"
-                        android:layout_toEndOf="@+id/boyImg"
-                        android:gravity="center_vertical"
-                        android:text="@string/londri_name"
-                        android:textSize="@dimen/text_size_medium"
-                        android:visibility="gone" />
-                    <!-- <ImageView
-                         android:id="@+id/callDeliveryBoy"
-                         android:layout_centerVertical="true"
-                         android:layout_alignParentEnd="true"
-                         android:visibility="gone"
-                         android:layout_width="30dp"
-                         android:src="@drawable/ic_call"
-                         android:layout_height="30dp" />-->
-
-                </RelativeLayout>
-
-                <RelativeLayout
+               <!-- <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -915,9 +848,9 @@
                         android:textSize="@dimen/text_size_medium"
                         android:visibility="gone" />
 
-                </RelativeLayout>
+                </RelativeLayout>-->
 
-                <RelativeLayout
+                <!--<RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -957,7 +890,7 @@
                         android:visibility="gone" />
 
 
-                </RelativeLayout>
+                </RelativeLayout>-->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -985,7 +918,8 @@
                         android:layout_alignParentEnd="true"
                         android:background="@drawable/ic_blue_circle"
                         android:padding="@dimen/length_10"
-                        android:src="@drawable/ic_call" />
+                        android:src="@drawable/ic_call"
+                        android:contentDescription="@string/zero" />
 
                     <com.makeramen.roundedimageview.RoundedImageView
                         android:id="@+id/dilevery_boy_iv"
@@ -1005,7 +939,7 @@
                         android:layout_marginStart="17dp"
                         android:layout_marginEnd="@dimen/length_10"
                         android:layout_toStartOf="@+id/callDeliveryBoy"
-                        android:layout_toEndOf="@+id/dilevery_boy_iv"
+                        android:layout_toEndOf="@id/dilevery_boy_iv"
                         android:fontFamily="@font/poppins_semibold"
                         android:gravity="center_vertical"
                         android:text="@string/londri_name"
@@ -1056,7 +990,7 @@
                     android:layout_marginTop="13dp"
                     android:layout_marginEnd="20dp"
                     android:gravity="center_vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
 
                     <ImageView
@@ -1070,7 +1004,7 @@
                         android:visibility="visible" />
 
                     <TextView
-                        android:id="@+id/pickup_date_tv"
+                        android:id="@+id/delivery_date_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -1136,7 +1070,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="130dp"
                     android:layout_marginTop="15dp"
-                    android:paddingStart="@dimen/length_20" />
+                    android:paddingStart="@dimen/length_20"
+                    tools:ignore="RtlSymmetry" />
 
                 <RelativeLayout
                     android:id="@+id/go_back_rl"

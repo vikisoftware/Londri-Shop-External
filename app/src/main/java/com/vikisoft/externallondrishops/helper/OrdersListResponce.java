@@ -3,6 +3,7 @@ package com.vikisoft.externallondrishops.helper;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@SuppressWarnings("unused")
 public class OrdersListResponce {
 
     @SerializedName("id")
@@ -119,6 +120,29 @@ public class OrdersListResponce {
     @SerializedName("longitude")
     @Expose
     private double longitude;
+
+    @SerializedName("userPhoto")
+    @Expose
+    private String userPhoto;
+    @SerializedName("deliveryCharges")
+    @Expose
+    private String deliveryCharges;
+
+    public String getDeliveryCharges() {
+        return deliveryCharges;
+    }
+
+    public void setDeliveryCharges(String deliveryCharges) {
+        this.deliveryCharges = deliveryCharges;
+    }
+
+    public String getUserPhoto() {
+        return userPhoto;
+    }
+
+    public void setUserPhoto(String userPhoto) {
+        this.userPhoto = userPhoto;
+    }
 
     public Integer getId() {
         return id;

@@ -68,7 +68,7 @@
     <string name="londri_service">Services you offer</string>
     <string name="deliverd_order">Delivered</string>
     <string name="c99">99</string>
-    <string name="todys_business">Todays Business</string>
+    <string name="todys_business">Today\'s Business</string>
     <string name="channel_name">shopNotification</string>
     <string name="channel_description">Shop New Order Arrived</string>
     <string name="your_order">Your Orders</string>
@@ -128,15 +128,15 @@
     <string name="message">message</string>
     <string name="View_Clothes">View Clothes</string>
     <string name="Change_Prices">Change Prices</string>
-    <string name="instruction_0">View Clothes and Change Prices Acordingly. You  can prices you set in range (i.e Saree - 60-200 $ )</string>
+    <string name="instruction_0">View Clothes and Change Prices Accordingly. You  can prices you set in range (i.e Saree – 60–200 $ )</string>
     <string name="gst_tax">GST TAX (0%)</string>
     <string name="offer_applied">Offer Applied (0%)</string>
     <string name="Shop_Status">Shop Status</string>
     <string name="laundry_cloths">Laundry Clothes</string>
-    <string name="loading">Loading ...</string>
+    <string name="loading">Loading …</string>
     <string name="Confirm">Confirm</string>
     <string name="Note">Note:</string>
-    <string name="instruction_1">You can only set prices for clothes in range  (i.e Saree - 60-200 $ )</string>
+    <string name="instruction_1">You can only set prices for clothes in range  (i.e Saree – 60–200 $ )</string>
     <string name="Edit_Clothes_prices">Edit Clothes Prices</string>
     <string name="contact_details">Contact Details</string>
     <string name="Address_Details">Address Details</string>
@@ -186,4 +186,6 @@
     <string name="Bank_Name_">Bank Name:</string>
     <string name="Go_To_Customer_Locations">Go To Customer Location</string>
     <string name="userDetails">User Details</string>
+    <string name="proccesing">(Proccesing)</string>
+    <string name="some_text_here">some text here</string>
 </resources>

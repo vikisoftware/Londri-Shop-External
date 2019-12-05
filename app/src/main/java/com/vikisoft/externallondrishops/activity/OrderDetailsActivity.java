@@ -29,10 +29,10 @@ import com.vikisoft.externallondrishops.helper.firebasenotification.Notification
 import com.vikisoft.externallondrishops.helper.firebasenotification.NotificationResponce;
 import com.vikisoft.externallondrishops.utils.SessionManager;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.Format;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -45,15 +45,12 @@ import static com.vikisoft.externallondrishops.activity.ViewClothsActivity.PAYME
 import static com.vikisoft.externallondrishops.activity.ViewClothsActivity.SERVICE_NAME;
 import static com.vikisoft.externallondrishops.api.ApiCall.getRetrofit;
 import static com.vikisoft.externallondrishops.fragments.OrderFragment.SELECTED_ORDER;
-import static com.vikisoft.externallondrishops.fragments.ProfileFragment.SERVICE;
+
 
 public class OrderDetailsActivity extends AppCompatActivity {
 
     public static final String ORDER_ID = "order_id";
     OrdersListResponce data;
-    private Button viewClothesBtn;
-    private List<ServiceListResponce> serviceList;
-    private RelativeLayout goBackRl,btnUserNavigation;
 
 
     @Override
@@ -68,9 +65,9 @@ public class OrderDetailsActivity extends AppCompatActivity {
     }
 
     private void initWork() {
-        ImageView back = findViewById(R.id.back);
+
         //Button payNow;
-        RoundedImageView boyImg = findViewById(R.id.boyImg);
+
         RoundedImageView boyImgd = findViewById(R.id.dilevery_boy_iv);
         ImageView backButton = findViewById(R.id.back);
         TextView serviceName = findViewById(R.id.serviceName);
@@ -82,20 +79,23 @@ public class OrderDetailsActivity extends AppCompatActivity {
         TextView houseCount = findViewById(R.id.houseCount);
         TextView housePrice = findViewById(R.id.housePrice);
         TextView totalPrice = findViewById(R.id.totalPrice);
-        TextView boyName = findViewById(R.id.boyName);
-        TextView pickupDate = findViewById(R.id.pickupDate);
-        TextView pickupPlace = findViewById(R.id.pickupPlace);
+
+
+
         TextView deliveryCharge = findViewById(R.id.deliveryCharge);
         TextView orderPaid = findViewById(R.id.orderPaid);
         TextView boyNamed = findViewById(R.id.laundry_boy_name);
         TextView pickUpDate = findViewById(R.id.pickup_date_tv);
+        TextView deliveryDate = findViewById(R.id.delivery_date_tv);
         TextView pickUpAddress = findViewById(R.id.pick_up_address_tv);
         Button btnUpdatePrice = findViewById(R.id.payNow);
-        btnUpdatePrice.setVisibility(View.GONE);
+        RelativeLayout btnUpdatePriceLay = findViewById(R.id.rlChangePrice);
+        btnUpdatePriceLay.setVisibility(View.GONE);
         Button shopStatus = findViewById(R.id.shopStatus);
-        viewClothesBtn = findViewById(R.id.view_cloths_btn);
-        goBackRl = findViewById(R.id.go_back_rl);
-        btnUserNavigation = findViewById(R.id.btnUserNavigation);
+        Button viewClothesBtn = findViewById(R.id.view_cloths_btn);
+        //    private List<ServiceListResponce> serviceList;
+        RelativeLayout goBackRl = findViewById(R.id.go_back_rl);
+        RelativeLayout btnUserNavigation = findViewById(R.id.btnUserNavigation);
         goBackRl.setOnClickListener(view -> finish());
         btnUserNavigation.setOnClickListener(v -> {
             if (data.getLatitude() != 0 && data.getLatitude() != 0.0) {
@@ -107,11 +107,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         getServiceList();
 
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a"), dateFormat2 = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
+
         Format n = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
         try {
-            Date date = dateFormat.parse(data.getPickupDate());
-            String dd = dateFormat2.format(Objects.requireNonNull(date));
+
+
             //Date dDate=dateFormat.parse(data.getDeliveryDate());
             //String ddd=dateFormat2.format(dDate);
             serviceName.setText(data.getServiceName());
@@ -123,17 +123,14 @@ public class OrderDetailsActivity extends AppCompatActivity {
             houseCount.setText(String.valueOf(data.getHouseCount()));
             housePrice.setText(n.format(data.getHousePrice()));
             totalPrice.setText(n.format(data.getFinalAmount()));
-            pickupDate.setText(dd);
-            btnUpdatePrice.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(OrderDetailsActivity.this, UpdatePrice.class);
-                    intent.putExtra(ORDER_ID, data.getPaymentId());
-                    intent.putExtra(SERVICE_NAME, data.getServiceName());
-                    startActivityForResult(intent, 1000);
+
+            btnUpdatePrice.setOnClickListener(v -> {
+                Intent intent = new Intent(OrderDetailsActivity.this, UpdatePrice.class);
+                intent.putExtra(ORDER_ID, data.getPaymentId());
+                intent.putExtra(SERVICE_NAME, data.getServiceName());
+                startActivityForResult(intent, 1000);
 //                   setPrices();
 
-                }
             });
             if (data.getPaymentStatus().equals("captured")) {
                 orderPaid.setText(getString(R.string.paid));
@@ -149,99 +146,83 @@ public class OrderDetailsActivity extends AppCompatActivity {
             orderPaid.setVisibility(View.GONE);
 
             deliveryCharge.setText(n.format(data.getFinalAmount() - (data.getAdultPrice() + data.getKidPrice() + data.getHousePrice())));
-            pickupPlace.setText(data.getPickupAddress());
+
             pickUpAddress.setText(data.getDeliveryAddress());
             //pickUpDate.setText(ddd);
             //pickupDate.setVisibility(View.GONE);
-            pickUpDate.setText(data.getDeliveryDate());
-            boyName.setText(data.getBoyName());
+            pickUpDate.setText(data.getPickupDate());
+            deliveryDate.setText(data.getDeliveryDate());
             boyNamed.setText(data.getBoyName());
             if (!data.getPhotoUrl().equals("-")) {
-                Glide.with(this).load(data.getPhotoUrl()).into(boyImg);
-                Glide.with(this).load(data.getPhotoUrl()).into(boyImgd);
+
+                Glide.with(this).load(data.getUserPhoto()).into(boyImgd);
             }
-            back.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onBackPressed();
-                }
-            });
-            backButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onBackPressed();
-                }
-            });
+
+            backButton.setOnClickListener(v -> onBackPressed());
             if (data.getStatus1().equals("Processing")) {
-                btnUpdatePrice.setVisibility(View.VISIBLE);
+                btnUpdatePriceLay.setVisibility(View.VISIBLE);
 //                shopStatus.setVisibility(View.VISIBLE);
-                shopStatus.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        final OrderAcceptHelper helper = new OrderAcceptHelper();
-                        helper.setImages(null);
-                        helper.setId(data.getPaymentId());
-                        helper.setStatus("Out for Delivery");
-                        //saveData(helper);
-                        ApiInterface apiInterface = getRetrofit().create(ApiInterface.class);
-                        Call<String> call = apiInterface.changeStatus(new Gson().toJson(helper));
-                        call.enqueue(new Callback<String>() {
-                            @Override
-                            public void onResponse(@NonNull Call<String> call,@NonNull Response<String> response) {
-                                if (response.body() != null)
-                                    if (response.body().equals("done")) {
-                                        Toast.makeText(OrderDetailsActivity.this, "Done", Toast.LENGTH_SHORT).show();
-                                        final ApiInterface apiService =
-                                                FMCApi.getClient().create(ApiInterface.class);
-                                        @SuppressLint("DefaultLocale") Data data1 = new Data("Order Status", "Order #" + String.format("%06d", helper.getId()) + " is " + helper.getStatus());
-                                        Notification notification = new Notification(data1, "/topics/order_status_" + data.getPaymentId());
+                shopStatus.setOnClickListener(v -> {
+                    final OrderAcceptHelper helper = new OrderAcceptHelper();
+                    helper.setImages(null);
+                    helper.setId(data.getPaymentId());
+                    helper.setStatus("Out for Delivery");
+                    //saveData(helper);
+                    ApiInterface apiInterface = getRetrofit().create(ApiInterface.class);
+                    Call<String> call = apiInterface.changeStatus(new Gson().toJson(helper));
+                    call.enqueue(new Callback<String>() {
+                        @Override
+                        public void onResponse(@NonNull Call<String> call,@NonNull Response<String> response) {
+                            if (response.body() != null)
+                                if (response.body().equals("done")) {
+                                    Toast.makeText(OrderDetailsActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                                    final ApiInterface apiService =
+                                            FMCApi.getClient().create(ApiInterface.class);
+                                    @SuppressLint("DefaultLocale") Data data1 = new Data("Order Status", "Order #" + String.format("%06d", helper.getId()) + " is " + helper.getStatus());
+                                    Notification notification = new Notification(data1, "/topics/order_status_" + data.getPaymentId());
 
-                                        final Call<NotificationResponce> notificationResponceCall = apiService.sendNotification(notification);
+                                    final Call<NotificationResponce> notificationResponceCall = apiService.sendNotification(notification);
 
-                                        notificationResponceCall.enqueue(new Callback<NotificationResponce>() {
-                                            @Override
-                                            public void onResponse(@NonNull Call<NotificationResponce> call,@NonNull Response<NotificationResponce> response) {
+                                    notificationResponceCall.enqueue(new Callback<NotificationResponce>() {
+                                        @Override
+                                        public void onResponse(@NonNull Call<NotificationResponce> call,@NonNull Response<NotificationResponce> response) {
 
 
-                                                //NotificationResponce notificationResponce = response.body();
+                                            //NotificationResponce notificationResponce = response.body();
 
 //                        Toast.makeText(getContext(),"Message ID is "+notificationResponce.getMessageId().toString(),Toast.LENGTH_LONG).show();
-                                            }
+                                        }
 
-                                            @Override
-                                            public void onFailure(@NonNull Call<NotificationResponce> call,@NonNull Throwable t) {
+                                        @Override
+                                        public void onFailure(@NonNull Call<NotificationResponce> call,@NonNull Throwable t) {
 //                        Toast.makeText(getContext(),"admin did not notification",Toast.LENGTH_LONG).show();
-                                            }
-                                        });
-                                        finish();
-                                    } else
-                                        Toast.makeText(OrderDetailsActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                                else
+                                        }
+                                    });
+                                    finish();
+                                } else
                                     Toast.makeText(OrderDetailsActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onFailure(@NonNull Call<String> call,@NonNull Throwable t) {
+                            else
                                 Toast.makeText(OrderDetailsActivity.this, "Error", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
+                        }
+
+                        @Override
+                        public void onFailure(@NonNull Call<String> call,@NonNull Throwable t) {
+                            Toast.makeText(OrderDetailsActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 });
             } else {
-                btnUpdatePrice.setVisibility(View.GONE);
+                btnUpdatePriceLay.setVisibility(View.GONE);
             }
 
 
 
 
-            viewClothesBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(OrderDetailsActivity.this, ViewClothsActivity.class);
-                    intent.putExtra(PAYMENTID, data.getPaymentId() + "");
-                    intent.putExtra(SERVICE_NAME, data.getServiceName());
-                    startActivity(intent);
-                }
+            viewClothesBtn.setOnClickListener(view -> {
+                Intent intent = new Intent(OrderDetailsActivity.this, ViewClothsActivity.class);
+                intent.putExtra(PAYMENTID, data.getPaymentId() + "");
+                intent.putExtra(SERVICE_NAME, data.getServiceName());
+                startActivity(intent);
             });
 
 
@@ -250,14 +231,14 @@ public class OrderDetailsActivity extends AppCompatActivity {
         }
     }
 
-    private void setPrices() {
+    /*private void setPrices() {
         Intent intent = new Intent(OrderDetailsActivity.this, ServicePrice.class);
         if (getService() > -1) {
             intent.putExtra(SERVICE, new Gson().toJson(serviceList.get(getService())));
             startActivity(intent);//, options.toBundle());
         }
 
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data1) {
@@ -291,15 +272,14 @@ public class OrderDetailsActivity extends AppCompatActivity {
     private void getServiceList() {
         final SessionManager sessionManager = new SessionManager(OrderDetailsActivity.this);
         ApiInterface apiInterface = getRetrofit().create(ApiInterface.class);
-        apiInterface = getRetrofit().create(ApiInterface.class);
         Call<List<ServiceListResponce>> call = apiInterface.getServiceList(String.valueOf(sessionManager.getLondriId()));
         call.enqueue(new Callback<List<ServiceListResponce>>() {
             @Override
-            public void onResponse(Call<List<ServiceListResponce>> call, Response<List<ServiceListResponce>> response) {
+            public void onResponse(@NotNull Call<List<ServiceListResponce>> call, @NotNull Response<List<ServiceListResponce>> response) {
                 if (response.body() != null)
                     if (response.body().size() != 0) {
                         sessionManager.setService(new Gson().toJson(response.body()));
-                        serviceList = response.body();
+                        //serviceList = response.body();
                     } else
                         Toast.makeText(OrderDetailsActivity.this, "Service List Error", Toast.LENGTH_SHORT).show();
                 else
@@ -307,14 +287,14 @@ public class OrderDetailsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<ServiceListResponce>> call, Throwable t) {
+            public void onFailure(@NotNull Call<List<ServiceListResponce>> call, @NotNull Throwable t) {
                 Toast.makeText(OrderDetailsActivity.this, "Service List Error", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
 
-    private int getService() {
+    /*private int getService() {
         if (serviceList != null && serviceList.size() > 0)
         for (int i = 0; i < serviceList.size(); i++) {
             if (data.getServiceName().equals(serviceList.get(i).getServiceName())) {
@@ -323,5 +303,5 @@ public class OrderDetailsActivity extends AppCompatActivity {
         }
 
         return -1;
-    }
+    }*/
 }
