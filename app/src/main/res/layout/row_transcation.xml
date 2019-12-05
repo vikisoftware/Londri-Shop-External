@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_marginTop="@dimen/length_10"
+        android:layout_marginBottom="@dimen/length_10"
+        android:layout_marginStart="@dimen/length_20"
+        android:layout_marginEnd="@dimen/length_20"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Monday"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/font_16"
+                android:layout_marginTop="22dp"
+                android:layout_marginStart="19dp"
+                />
+
+            <TextView
+                android:id="@+id/date_and_time_tv"
+                android:layout_toRightOf="@id/day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Jan"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="12sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="23dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/shopping_bag_iv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_shopping_bag"
+                android:layout_below="@id/day_tv"
+                android:tint="@color/black"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="18dp"
+
+                />
+
+            <TextView
+                android:id="@+id/cloths_count_tv"
+                android:layout_below="@+id/day_tv"
+                android:layout_toRightOf="@id/shopping_bag_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="18dp"
+                />
+
+            <TextView
+                android:id="@+id/orders_tv"
+                android:layout_below="@id/shopping_bag_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Orders"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="14sp"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="27dp"
+                android:textColor="@color/figmaBlue"
+                />
+
+
+            <ImageView
+                android:id="@+id/gift_iv"
+                android:layout_toRightOf="@+id/cloths_count_tv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_gift"
+                android:layout_below="@id/day_tv"
+                android:layout_marginTop="12dp"
+                android:tint="@color/black"
+                android:layout_marginStart="70dp"
+                />
+
+
+            <TextView
+                android:id="@+id/transaction_amount_tv"
+                android:layout_below="@+id/day_tv"
+                android:layout_toRightOf="@id/gift_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="22sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="17dp"
+                />
+
+            <TextView
+                android:id="@+id/total_payment_tv"
+                android:layout_toRightOf="@+id/cloths_count_tv"
+                android:layout_below="@id/gift_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/Total_Payment"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:textSize="14sp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="13dp"
+                android:textColor="#219653"
+                />
+
+           <!-- <View
+                android:id="@+id/dashed_gap_v"
+                android:layout_width="match_parent"
+                android:layerType="software"
+                android:layout_height="2dp"
+                android:layout_below="@id/total_payment_tv"
+                android:layout_marginTop="23dp"
+                android:background="@drawable/dotted_line"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="25dp"
+
+                />-->
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

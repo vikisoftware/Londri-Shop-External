@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.ProfileFragment">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_marginTop="@dimen/text_size_large"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize">
+
+        <!--<ImageView
+            android:id="@+id/back"
+            android:layout_marginStart="10dp"
+            android:layout_width="41dp"
+            android:layout_marginTop="@dimen/length_10"
+            android:background="@drawable/ic_white_circle"
+            android:backgroundTint="#4DF2994A"
+            android:layout_height="41dp"
+            android:tint="@color/black"
+            android:padding="@dimen/length_5"
+            app:srcCompat="@drawable/ic_cancel"
+            android:visibility="visible"/>-->
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/zero"
+            android:src="@drawable/ic_cancel"
+            android:tint="@color/black"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="13dp"
+            android:alpha="0.3"
+            android:background="@drawable/button_shape_round_white"
+            android:backgroundTint="#F2994A"
+            android:contentDescription="@string/zero"
+            android:elevation="2dp"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:layout_toRightOf="@id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/Your_Profile"
+            android:textSize="@dimen/length_20"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/black"/>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/logout"
+            android:layout_width="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_shape_round_white"
+
+            android:translationZ="2dp"
+            android:elevation="2dp"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="20dp"
+                android:translationZ="5dp"
+                android:elevation="5dp"
+                android:src="@drawable/ic_settings_outline"
+                android:layout_height="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    //profile image
+    <RelativeLayout
+        android:id="@+id/profileCard"
+        android:layout_below="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/mdtp_white"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <RelativeLayout
+                android:id="@+id/temp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                >
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/playstore_icon"
+                    android:transitionName="profileTransition"
+                    app:riv_corner_radius="50dp" />
+
+
+                <ImageView
+                    android:id="@+id/edit_profile_pic_iv"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/ic_white_circle"
+                    android:src="@drawable/ic_add_img"
+                    android:padding="@dimen/length_10"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_below="@+id/temp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/welcome"
+                android:textSize="@dimen/font_16"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="@color/black"
+                android:transitionName="nameTransition" />
+
+            <ImageView
+                android:id="@+id/editName"
+                android:layout_toRightOf="@+id/customerName"
+                android:visibility="gone"
+                android:layout_marginTop="18dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:src="@drawable/ic_edit"
+                android:tint="@color/grey_700"
+                android:gravity="end"
+                />
+            <TextView
+                android:id="@+id/customerID"
+                android:layout_below="@+id/customerName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:text="@string/welcome"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_14" />
+
+
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+    //old layout
+    <LinearLayout
+        android:layout_below="@+id/profileCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+
+                <!--<androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_small"
+                    android:backgroundTint="@color/mdtp_white">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_xlarge"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginEnd="@dimen/margin_xlarge"
+                        android:gravity="center_vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!--<TextView
+                                android:id="@+id/addressLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:text="@string/addressdetails"
+                                android:textSize="@dimen/text_size_xlarge"
+                                android:transitionName="labelTransormation"
+                                v/>-->
+
+                            <Button
+                                android:id="@+id/customerNewAddress"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center_vertical|end"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:background="@drawable/blue_gradient_background"
+                                android:text="@string/add_new"
+                                android:fontFamily="@font/muli_bold"
+                                android:textColor="@color/white"
+                                android:textAllCaps="false"
+                                android:visibility="gone"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    //contact
+                    <RelativeLayout
+                        android:id="@+id/contact_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/length_30">
+
+                        <ImageView
+                            android:id="@+id/edit_contact_iv"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="@dimen/length_20"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/contact_iv"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="42dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="3dp"
+                            android:src="@drawable/ic_local_phone_outlined"
+                            />
+
+                        <TextView
+                            android:id="@+id/contact_title_tv"
+                            android:layout_toRightOf="@+id/contact_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contact_details"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_18"
+                            android:layout_marginStart="19dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/contact_tv"
+                            android:layout_toRightOf="@+id/contact_iv"
+                            android:layout_below="@+id/contact_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+91-000 000 0000"
+                            android:layout_marginTop="@dimen/length_5"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_16"
+                            android:layout_marginStart="19dp"
+                            />
+
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_below="@id/contact_tv"
+                            android:layout_marginStart="87dp"
+                            android:background="#C5C4C4"/>
+
+                    </RelativeLayout>
+
+                    //address details
+                    <RelativeLayout
+                        android:id="@+id/address_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/length_30">
+
+                        <ImageView
+                            android:id="@+id/edit_address_iv"
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:background="@drawable/ic_white_circle"
+                            android:gravity="end"
+                            android:scaleType="fitXY"
+                            android:padding="10dp"
+                            android:backgroundTint="#4DF2994A"
+                            android:src="@drawable/ic_edit"
+                            android:tint="@color/grey_700"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/length_10"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/address_iv"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="42dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="9dp"
+                            android:src="@drawable/ic_business_center_outlined"
+                            />
+
+                        <TextView
+                            android:id="@+id/address_title_tv"
+                            android:layout_toRightOf="@+id/address_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Address_Details"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_18"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginStart="19dp"
+                            />
+
+                        //address
+                        <RelativeLayout
+                            android:id="@+id/address_details_rl"
+                            android:layout_toEndOf="@id/address_iv"
+                            android:layout_below="@+id/address_title_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/address_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                android:visibility="gone"
+                                />
+
+                            <TextView
+                                android:id="@+id/address_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/address_label_tv"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/addressList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/address_title_tv"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:visibility="gone"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_below="@id/address_details_rl"
+                            android:layout_marginStart="87dp"
+                            android:background="#C5C4C4"/>
+
+                    </RelativeLayout>
+
+                    //bank details
+                    <RelativeLayout
+                        android:id="@+id/bank_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/length_30">
+
+                        <ImageView
+                            android:id="@+id/edit_bank_iv"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="@dimen/length_20"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/bank_iv"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="42dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="9dp"
+                            android:src="@drawable/ic_account_balance_wallet_outlined"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/editBank"
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:background="@drawable/ic_white_circle"
+                            android:gravity="end"
+                            android:scaleType="fitXY"
+                            android:padding="10dp"
+                            android:backgroundTint="#4DF2994A"
+                            android:src="@drawable/ic_edit"
+                            android:tint="@color/grey_700"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/length_10"
+                            />
+
+
+
+                        <TextView
+                            android:id="@+id/bank_title_tv"
+                            android:layout_toRightOf="@+id/bank_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Bank_Details"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_18"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginTop="6dp"
+                            />
+
+                     <!--   <TextView
+                            android:id="@+id/bankDetails"
+                            android:layout_toRightOf="@+id/bank_iv"
+                            android:layout_toLeftOf="@+id/editBank"
+                            android:layout_marginEnd="@dimen/length_20"
+                            android:layout_below="@+id/bank_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Bank_Details"
+                            android:layout_marginTop="@dimen/length_5"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_16"
+                            android:layout_marginStart="19dp"
+                            />-->
+
+                        //bank name
+                        <RelativeLayout
+                            android:id="@+id/bank_name_rl"
+                            android:layout_below="@+id/bank_title_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/bank_name_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Bank_Name_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/bank_name_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/bank_name_label_tv"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        //branch name
+                        <RelativeLayout
+                            android:id="@+id/branch_name_rl"
+                            android:layout_below="@+id/bank_name_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/length_10"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/branch_name_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Branch_Name_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/branch_name_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/branch_name_label_tv"
+                                
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        //account number
+                        <RelativeLayout
+                            android:id="@+id/account_no_rl"
+                            android:layout_below="@+id/branch_name_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_marginTop="@dimen/length_10"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/account_no_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Account_No_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/account_no_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/account_no_label_tv"
+                                
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        //account holder
+                        <RelativeLayout
+                            android:id="@+id/account_holder_rl"
+                            android:layout_below="@+id/account_no_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_marginTop="@dimen/length_10"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/account_holder_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Account_Holder_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/account_holder_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/account_holder_label_tv"
+                                
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                        //account type
+                        <RelativeLayout
+                            android:id="@+id/account_type_rl"
+                            android:layout_below="@+id/account_holder_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_marginTop="@dimen/length_10"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/account_type_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/Account_Type_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/account_type_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/account_type_label_tv"
+                                
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+                        
+                        //IFSC code
+                        <RelativeLayout
+                            android:id="@+id/ifsc_rl"
+                            android:layout_below="@+id/account_type_rl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/bank_iv"
+                            android:layout_marginTop="@dimen/length_10"
+                            android:layout_toStartOf="@+id/editBank"
+                            android:layout_marginStart="19dp">
+
+                            <TextView
+                                android:id="@+id/ifsc_label_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/IFSC_Code_"
+                                android:textColor="#80000000"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+
+                            <TextView
+                                android:id="@+id/ifsc_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ifsc_label_tv"
+                                
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textSize="16sp"
+                                />
+                        </RelativeLayout>
+
+                      <!--  <TextView
+                            android:id="@+id/tvGstNo"
+                            android:layout_below="@id/bankDetails"
+                            android:layout_toRightOf="@+id/bank_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GST"
+                            android:layout_marginTop="@dimen/length_5"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_16"
+                            android:layout_marginStart="19dp" />-->
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_below="@id/ifsc_rl"
+                            android:layout_marginStart="87dp"
+                            android:background="#C5C4C4"/>
+
+                    </RelativeLayout>
+
+
+                    //Gst
+                    <RelativeLayout
+                        android:id="@+id/gst_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/length_30">
+
+                        <ImageView
+                            android:id="@+id/edit_gst_iv"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginEnd="@dimen/length_20"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_edit"
+                            android:padding="10dp"
+                            android:scaleType="fitXY"
+                            android:visibility="gone"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/gst_iv"
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_marginStart="42dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginTop="9dp"
+                            android:src="@drawable/ic_monetization_outlined"
+                            />
+
+                        <TextView
+                            android:id="@+id/gst_title_tv"
+                            android:layout_toRightOf="@+id/gst_iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/GST_number"
+                            android:fontFamily="@font/poppins_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_18"
+                            android:layout_marginStart="19dp"
+                            android:layout_marginTop="6dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tvGstNo"
+                            android:layout_toRightOf="@+id/gst_iv"
+                            android:layout_below="@+id/gst_title_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="000 000 0000"
+                            android:layout_marginTop="@dimen/length_5"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_16"
+                            android:layout_marginStart="19dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/condition_tv"
+                            android:layout_toRightOf="@+id/gst_iv"
+                            android:layout_below="@+id/tvGstNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="18% GST will be applied on all received orders."
+                            android:layout_marginTop="15dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/font_14"
+                            android:layout_marginEnd="41dp"
+                            android:layout_marginStart="19dp"
+                            />
+
+
+                        <ImageView
+                            android:id="@+id/editGST"
+                            android:layout_width="41dp"
+                            android:layout_height="41dp"
+                            android:background="@drawable/ic_white_circle"
+                            android:gravity="end"
+                            android:scaleType="fitXY"
+                            android:padding="10dp"
+                            android:backgroundTint="#4DF2994A"
+                            android:src="@drawable/ic_edit"
+                            android:tint="@color/grey_700"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="@dimen/length_10"
+                            />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_below="@id/condition_tv"
+                            android:layout_marginStart="87dp"
+                            android:background="#C5C4C4"
+                            android:visibility="gone"/>
+
+                    </RelativeLayout>
+                  <!--  <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/addressList"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+                    </LinearLayout>-->
+                </LinearLayout>
+                <!--</androidx.cardview.widget.CardView>-->
+               <!-- <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="@string/bankdetails"
+                    android:textSize="@dimen/text_size_xlarge"
+                     />-->
+               <!-- <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bankCard"
+                        android:transitionName="labelTransormation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:id="@+id/bankLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                               &lt;!&ndash; <TextView
+                                    android:id="@+id/bankDetails"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.9"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="7dp"
+                                    android:paddingEnd="1dp"
+                                    android:paddingBottom="7dp"
+                                    android:textSize="@dimen/text_size_large" />&ndash;&gt;
+                               &lt;!&ndash; <ImageView
+                                    android:id="@+id/editBank"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingStart="1dp"
+                                    android:src="@drawable/ic_edit"
+                                    android:tint="@color/grey_700"
+                                    android:gravity="center_vertical|end"
+                                    android:contentDescription="@string/zero" />&ndash;&gt;
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:id="@+id/gstlabel"
+                                android:layout_marginTop="5dp"
+                                android:textSize="@dimen/text_size_large"
+                                android:text="@string/gst_details"
+                                android:layout_below="@+id/bankLayout"
+                                android:layout_height="wrap_content"/>
+                            <LinearLayout
+                                android:id="@+id/GSTLayout"
+                                android:layout_marginTop="5dp"
+                                android:layout_below="@+id/gstlabel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                               &lt;!&ndash; <TextView
+                                    android:id="@+id/tvGstNo"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.9"
+                                    android:paddingStart="10dp"
+                                    android:paddingTop="7dp"
+                                    android:paddingEnd="1dp"
+                                    android:paddingBottom="7dp"
+                                    android:textSize="@dimen/text_size_large" />&ndash;&gt;
+                               &lt;!&ndash; <ImageView
+                                    android:id="@+id/editGST"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:paddingStart="1dp"
+                                    android:src="@drawable/ic_edit"
+                                    android:tint="@color/grey_700"
+                                    android:gravity="center_vertical|end"
+
+                                    />&ndash;&gt;
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="@string/servicedetails"
+                    android:textSize="@dimen/text_size_xlarge"
+                    android:visibility="gone"
+                     />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="@color/mdtp_white"
+                    android:layout_marginTop="10dp"
+                    android:translationZ="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:id="@+id/serviceCheckList"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="5dp"
+                        android:orientation="vertical"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingTop="10dp"
+                        android:layout_height="wrap_content">
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:id="@+id/serviceSelectedCards"
+                    android:layout_width="match_parent"
+                    android:paddingBottom="5dp"
+                    android:orientation="vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/weekly_off_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Weekly_Off"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:textColor="#4064E5"
+                    android:textSize="@dimen/font_18"
+                    android:layout_marginStart="42dp"
+                    android:layout_marginTop="26dp"
+
+                    />
+
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="42dp"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

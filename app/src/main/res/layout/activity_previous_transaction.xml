@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/tool_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/zero"
+            android:src="@drawable/ic_back"
+            android:tint="@color/black"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="13dp"
+            android:alpha="0.3"
+            android:background="@drawable/button_shape_round_white"
+            android:backgroundTint="#F2994A"
+            android:contentDescription="@string/zero"
+            android:elevation="2dp"
+            android:translationZ="2dp" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:layout_toEndOf="@id/back_iv"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="@string/Previous_Transactions"
+            android:textSize="@dimen/length_20" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/tool_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_below="@+id/view_all_tv"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.HouseFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/houseRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/emptyView"
+            android:text="No Data"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/saveHouse"
+            android:layout_width="142dp"
+            android:background="@drawable/blue_gradient_background"
+            android:textSize="@dimen/text_size_large"
+            android:textColor="@color/mdtp_white"
+            android:text="@string/Confirm"
+            android:textAllCaps="false"
+            android:fontFamily="@font/muli_bold"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</FrameLayout>

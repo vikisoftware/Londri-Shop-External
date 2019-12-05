@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/zero"
+            android:src="@drawable/ic_cancel"
+            android:tint="@color/black"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="13dp"
+            android:alpha="0.3"
+            android:background="@drawable/button_shape_round_white"
+            android:backgroundTint="#F2994A"
+            android:contentDescription="@string/zero"
+            android:elevation="2dp"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/laundry_cloths"
+            android:textSize="@dimen/font_20"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_toRightOf="@+id/back"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="22dp"
+            />
+
+
+    </RelativeLayout>
+
+
+   <!-- <ImageView
+        android:id="@+id/back"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_cancel"
+        android:background="@drawable/green_btn"
+        android:scaleType="fitXY"
+        android:backgroundTint="#4DF2994A"
+        android:padding="5dp"
+        />-->
+
+
+
+<RelativeLayout
+    android:layout_below="@+id/toolbar_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ImageView
+        android:id="@+id/cloth_img"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="21dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="39dp"
+        android:src="@drawable/ic_wash_fold"
+        />
+
+    <TextView
+        android:id="@+id/selected_option_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/washnfold1day"
+        android:textSize="@dimen/font_18"
+        android:textColor="@color/black"
+        android:fontFamily="@font/poppins_semibold"
+        android:layout_toRightOf="@+id/cloth_img"
+        android:layout_marginTop="37dp"
+        android:layout_marginStart="17dp"
+        />
+
+
+    <TextView
+        android:id="@+id/order_no_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/selected_option_tv"
+        android:layout_marginStart="17dp"
+        android:layout_toRightOf="@+id/cloth_img"
+        android:fontFamily="@font/poppins_medium"
+        android:text="000000"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_below="@+id/order_no_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:translationZ="2dp"
+        app:tabGravity="fill"
+        android:layout_marginTop="24dp"
+        android:background="@color/white"
+        app:tabIndicatorColor="@color/figmaGreen"
+        app:tabSelectedTextColor="@color/figmaGreen"
+        app:tabTextAppearance="@style/tabStyle"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorHeight="8dp"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicator="@drawable/ic_indicator"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tabs" />
+</RelativeLayout>
+
+</RelativeLayout>

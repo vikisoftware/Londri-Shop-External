@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.EditAddressActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:focusableInTouchMode="true"
+            android:focusable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/zero"
+                    android:src="@drawable/ic_cancel"
+                    android:tint="@color/black"
+                    android:visibility="visible"
+                    android:layout_marginStart="20dp"/>
+
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="13dp"
+                    android:alpha="0.3"
+                    android:background="@drawable/button_shape_round_white"
+                    android:backgroundTint="#F2994A"
+                    android:contentDescription="@string/zero"
+                    android:elevation="2dp"
+                    android:translationZ="2dp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/length_20"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:layout_marginEnd="@dimen/margin_large"
+                    android:gravity="center"
+                    android:textSize="@dimen/length_20"
+                    android:text="@string/Bank_Details"
+                    android:transitionName="labelTransormation" />
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/margin_xxlarge"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                      
+                       
+
+                        <EditText
+                            android:layout_marginTop="55dp"
+                            android:singleLine="true"
+                            android:id="@+id/ifscCode"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:hint="@string/IFSC_Code"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_600"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"/>
+                        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!-- <com.google.android.material.textfield.TextInputLayout
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_margin="@dimen/margin_medium"
+                             android:backgroundTint="@color/grey_600"
+                             android:textColorHint="@color/grey_600">-->
+
+                        <EditText
+                            android:singleLine="true"
+                            android:id="@+id/bankName"
+                            android:layout_width="match_parent"
+                            android:textStyle="bold"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginTop="@dimen/length_30"
+                            android:hint="@string/Bank_Name"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_600"
+                            android:transitionName="addressTeansition"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"/>
+                        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:backgroundTint="@color/grey_600"
+                            android:textColorHint="@color/grey_600">-->
+
+                        <EditText
+                            android:singleLine="true"
+                            android:id="@+id/branchName"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingEnd="10dp"
+                            android:textStyle="bold"
+                            android:paddingStart="@dimen/length_10"
+                            android:layout_marginTop="@dimen/length_30"
+                            android:hint="@string/Branch_Name"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_600"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"/>
+                        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:backgroundTint="@color/grey_600"
+                            android:textColorHint="@color/grey_600">-->
+
+                        <EditText
+                            android:singleLine="true"
+                            android:id="@+id/holderName"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingStart="10dp"
+                            android:textStyle="bold"
+                            android:paddingEnd="10dp"
+                            android:layout_marginTop="30dp"
+                            android:hint="@string/Holder_Name"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"
+                            android:textColorHint="@color/grey_600" />
+                        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:backgroundTint="@color/grey_600"
+                            android:textColorHint="@color/grey_600">-->
+
+                        <EditText
+                            android:singleLine="true"
+                            android:id="@+id/accountNo"
+                            android:layout_width="match_parent"
+                            android:textStyle="bold"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginTop="30dp"
+                            android:hint="@string/Account_Number"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_600"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"/>
+                        <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                        <!--<com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:backgroundTint="@color/grey_600"
+                            android:textColorHint="@color/grey_600">-->
+
+                        <EditText
+                            android:singleLine="true"
+
+                            android:id="@+id/accountType"
+                            android:textStyle="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/grey_stroke"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:layout_marginTop="30dp"
+                            android:hint="@string/Account_type"
+                            android:textSize="@dimen/font_16"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grey_600"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginEnd="7dp"/>
+                        <!-- </com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+
+
+
+                        <Button
+                            android:id="@+id/saveBank"
+                            android:layout_width="150dp"
+                            android:layout_height="51dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="47dp"
+                            android:background="@drawable/blue_gradient_background"
+                            android:text="@string/update"
+                            android:fontFamily="@font/muli_bold"
+                            android:textAllCaps="true"
+                            android:textColor="@color/mdtp_white"
+                            android:textSize="@dimen/font_16"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_3"
+    android:transitionName="labelTransormation"
+    tools:context=".activity.BankDeailsActivity">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="5dp"
+                android:tint="@color/grey_800"
+                tools:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_toEndOf="@+id/back"
+                android:gravity="center_vertical"
+                android:text="Bank Details"
+                android:textSize="@dimen/text_size_label_medium" />
+        </RelativeLayout>
+
+        &lt;!&ndash;<com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">&ndash;&gt;
+
+        <EditText
+            android:id="@+id/ifscCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="IFSC Ccde"
+            ="@id/bankName"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash;</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">&ndash;&gt;
+
+        <EditText
+            android:id="@+id/bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="Bank Name"
+            ="@id/branchName"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash;</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">&ndash;&gt;
+
+        <EditText
+            android:id="@+id/branchName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="Branch Name"
+            ="@id/holderName"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash;</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">&ndash;&gt;
+
+        <EditText
+            android:id="@+id/holderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="Account Holder"
+            ="@id/accountNo"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash;</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">&ndash;&gt;
+
+        <EditText
+            android:id="@+id/accountNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="Account Number"
+            android:inputType="number"
+            ="@id/accountType"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash;</com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="@color/grey_600"
+            android:textColorHint="@color/grey_600">
+&ndash;&gt;
+        <EditText
+            android:id="@+id/accountType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/button_shape_b_grey"
+            android:hint="Account Type"
+            ="@id/saveBank"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:singleLine="true"
+            android:textColor="@color/grey_800"
+            android:textColorHint="@color/grey_600" />
+        &lt;!&ndash; </com.google.android.material.textfield.TextInputLayout>&ndash;&gt;
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/red_A700"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/textView"
+                android:text="Money will be credited into this Account" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/saveBank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_large"
+            android:background="@drawable/button_shape"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textColor="@color/mdtp_white"
+            android:textSize="@dimen/text_size_large" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>-->

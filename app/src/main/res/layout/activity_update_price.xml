@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/mdtp_white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.UpdatePrice">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/zero"
+            android:src="@drawable/ic_cancel"
+            android:tint="@color/black"
+            android:visibility="visible"
+            android:layout_marginStart="20dp"/>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="13dp"
+            android:alpha="0.3"
+            android:background="@drawable/button_shape_round_white"
+            android:backgroundTint="#F2994A"
+            android:contentDescription="@string/zero"
+            android:elevation="2dp"
+            android:translationZ="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Edit_Clothes_prices"
+            android:textSize="@dimen/font_20"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_toRightOf="@+id/back"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="36dp"
+            />
+
+    </RelativeLayout>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       >
+
+
+       <!--<ImageView
+           android:id="@+id/back"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_marginStart="26dp"
+           android:layout_marginTop="8dp"
+           android:src="@drawable/ic_cancel"
+           android:background="@drawable/green_btn"
+           android:scaleType="fitXY"
+           android:backgroundTint="#4DF2994A"
+           android:padding="5dp"
+
+           />-->
+
+
+
+
+
+       <ImageView
+           android:id="@+id/cloth_img"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:layout_below="@id/back"
+           android:layout_marginStart="21dp"
+           android:scaleType="fitXY"
+           android:layout_marginTop="39dp"
+           android:src="@drawable/ic_wash_fold"
+           />
+
+       <TextView
+           android:id="@+id/selected_option_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/washnfold1day"
+           android:textSize="@dimen/font_18"
+           android:textColor="@color/black"
+           android:fontFamily="@font/poppins_semibold"
+           android:layout_toRightOf="@+id/cloth_img"
+           android:layout_below="@id/back"
+           android:layout_marginTop="37dp"
+           android:layout_marginStart="17dp"
+           />
+
+
+       <TextView
+           android:id="@+id/order_no_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="000000"
+           android:textSize="@dimen/font_18"
+           android:textColor="@color/black"
+           android:fontFamily="@font/poppins_medium"
+           android:layout_toRightOf="@+id/cloth_img"
+           android:layout_below="@id/selected_option_tv"
+           android:layout_marginStart="17dp"
+           />
+
+   </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+    <LinearLayout
+        android:id="@+id/root"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </androidx.core.widget.NestedScrollView>
+      <Button
+          android:id="@+id/applyChanges"
+          android:layout_width="142dp"
+          android:background="@drawable/blue_gradient_background"
+          android:layout_gravity="center_horizontal"
+          android:layout_marginBottom="10dp"
+          android:textColor="@color/white"
+          android:textSize="@dimen/text_size_large"
+          android:textAllCaps="false"
+          android:text="@string/Confirm"
+          android:fontFamily="@font/muli_black"
+          android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/length_30"
+        android:layout_marginEnd="67dp"
+
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/note_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Note"
+            android:fontFamily="@font/muli_bold"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:layout_below="@+id/note_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instruction_1"
+            android:textSize="@dimen/font_14"
+            android:fontFamily="@font/muli_regular"
+            android:layout_marginBottom="@dimen/length_10"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

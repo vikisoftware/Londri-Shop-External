@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/length_90"
+    android:background="@color/white"
+    android:paddingLeft="20dp"
+    android:paddingTop="5dp"
+    android:orientation="vertical"
+    android:paddingRight="20dp"
+    >
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/clothImage"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+         />
+    <EditText
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_weight="0.4"
+        android:hint="@string/price"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_large"
+        android:background="@drawable/grey_stroke"
+        android:fontFamily="@font/poppins_medium"
+        android:paddingStart="@dimen/length_10"
+        android:layout_height="45dp" />
+    </LinearLayout>
+    <!--<View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_400"
+        android:layout_marginTop="5dp"
+        v
+        />-->
+</LinearLayout>

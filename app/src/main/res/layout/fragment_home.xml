@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/londriName"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/londri_name"
+                    android:maxLines="2"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="18sp"
+                     />
+
+                <TextView
+                    android:id="@+id/tvLondriId"
+                    android:layout_below="@+id/londriName"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/first_name"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/black"
+                    android:singleLine="true"
+                    android:fontFamily="@font/poppins_light"/>
+
+                <Button
+                    android:id="@+id/prime_laundry_btn"
+                    android:layout_toRightOf="@id/tvLondriId"
+                    android:layout_below="@+id/londriName"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="300dp"
+                    android:layout_height="23dp"
+                    android:textAllCaps="false"
+                    android:background="@drawable/orange_btn"
+                    android:text="@string/Prime_Londri"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    />
+            </RelativeLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/homeProfilePhoto"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginEnd="20dp"
+                android:elevation="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/prof"
+                android:translationZ="5dp"
+                app:riv_corner_radius="50dp" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/todys_business"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/black"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/margin_large"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/mdtp_white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="3dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <LinearLayout
+                            android:id="@+id/ll"
+                            android:layout_width="match_parent"
+                            android:layout_margin="@dimen/margin_small"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/todaysOrderCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/c99"
+                                    android:textColor="#3F50DD"
+                                    android:textSize="25sp"
+                                    android:fontFamily="@font/poppins_semibold" />
+
+                                <TextView
+                                    android:id="@+id/textView1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/home_label"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/remainingOrderCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/c99"
+                                    android:textColor="#FC573B"
+                                    android:textSize="25sp"
+                                    android:fontFamily="@font/poppins_semibold"  />
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/remaining_order"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/deliveredOrderCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/c99"
+                                    android:textSize="25sp"
+                                    android:textColor="#219653"
+                                    android:fontFamily="@font/poppins_semibold"  />
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/deliverd_order"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/poppins_medium"/>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/today_earning_title_tv"
+                            android:layout_below="@+id/ll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/today_earning_title"
+                            android:textColor="#999999"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="10dp"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/todayEarning"
+                            android:layout_toRightOf="@+id/today_earning_title_tv"
+                            android:layout_below="@+id/ll"
+                            android:layout_marginStart="27dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="@string/c99"
+                            android:textColor="#3F50DD"
+                            android:textSize="25sp"
+                            android:fontFamily="@font/poppins_semibold" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/home_label"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <TextView
+                        android:id="@+id/todaysOrderCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@id/textView1"
+                        android:text="@string/home_label"
+                        android:textSize="@dimen/text_size_large" />
+
+                </RelativeLayout>-->
+
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/remaining_order"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <TextView
+                        android:id="@+id/remainingOrderCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@id/textView2"
+                        android:text="@string/home_label"
+                        android:textSize="@dimen/text_size_large" />
+
+                </RelativeLayout>-->
+
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/deliverd_order"
+                        android:textSize="@dimen/text_size_large" />
+
+                    <TextView
+                        android:id="@+id/deliveredOrderCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toEndOf="@id/textView3"
+                        android:text="@string/home_label"
+                        android:textSize="@dimen/text_size_large" />
+
+                </RelativeLayout>-->
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="33dp">
+
+
+                    <TextView
+                        android:id="@+id/previous_transaction_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/Previous_Transactions"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/poppins_medium"
+                        />
+
+                    <TextView
+                        android:id="@+id/view_all_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/View_All"
+                        android:textSize="18sp"
+                        android:textColor="#3F50DD"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/poppins_medium"
+                        />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_below="@+id/view_all_tv"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+
+
+                </RelativeLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:baselineAligned="false"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWashFold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="60dp"
+                                android:layout_height="60dp">
+
+
+                                <ImageView
+                                    android:layout_width="80dp"
+                                    android:layout_height="80dp"
+                                    android:layout_centerInParent="true"
+                                    android:contentDescription="@string/welcome"
+
+                                    app:srcCompat="@drawable/ic_wash_fold" />
+
+                                <ImageView
+                                    android:id="@+id/washnfoldcnticon"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:contentDescription="@string/welcome"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/shape_circle" />
+
+                                <TextView
+                                    android:id="@+id/count1"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:text="@string/c99"
+                                    android:textColor="@color/mdtp_white"
+                                    android:textSize="@dimen/text_size_large" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/v1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:gravity="center"
+                                android:text="@string/washnfold1day"
+                                android:textSize="@dimen/text_size_large"
+                                android:transitionName="homeServeice" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+
+                                android:text="@string/day1" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWashIron"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="60dp"
+                                android:layout_height="60dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:contentDescription="@string/welcome"
+
+                                    app:srcCompat="@drawable/ic_wash_iron" />
+
+                                <ImageView
+                                    android:id="@+id/washnironcnticon"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:contentDescription="@string/welcome"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/shape_circle" />
+
+                                <TextView
+                                    android:id="@+id/count2"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:text="@string/c99"
+                                    android:textColor="@color/mdtp_white"
+                                    android:textSize="@dimen/text_size_large" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/v2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:gravity="center"
+                                android:text="@string/washniron1day"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+
+                                android:text="@string/day2" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:baselineAligned="false">
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardWashHang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="60dp"
+                                android:layout_height="60dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:contentDescription="@string/welcome"
+
+                                    app:srcCompat="@drawable/ic_hang" />
+
+                                <ImageView
+                                    android:id="@+id/washnhangcnticon"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:contentDescription="@string/welcome"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/shape_circle" />
+
+                                <TextView
+                                    android:id="@+id/count3"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:text="@string/c99"
+                                    android:textColor="@color/mdtp_white"
+                                    android:textSize="@dimen/text_size_large" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/v3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:gravity="center"
+                                android:text="@string/washnhang1day"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+
+                                android:text="@string/day2" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardDryClean"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="60dp"
+                                android:layout_height="60dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:contentDescription="@string/welcome"
+
+                                    app:srcCompat="@drawable/ic_jacket" />
+
+                                <ImageView
+                                    android:id="@+id/dryclndcnticon"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:contentDescription="@string/welcome"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/shape_circle" />
+
+                                <TextView
+                                    android:id="@+id/count4"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:text="@string/c99"
+                                    android:textColor="@color/mdtp_white"
+                                    android:textSize="@dimen/text_size_large" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/v4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:gravity="center"
+                                android:text="@string/dryclean"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/day2"
+
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="15dp"
+                        android:layout_height="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:baselineAligned="false">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.6"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white">
+
+
+                    </View>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardIron"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_large"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white"
+                        android:translationZ="5dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="60dp"
+                                android:layout_height="60dp">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:contentDescription="@string/welcome"
+
+                                    app:srcCompat="@drawable/ic_iron" />
+
+                                <ImageView
+                                    android:id="@+id/ironcnticon"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:contentDescription="@string/welcome"
+                                    android:tint="@color/colorPrimary"
+                                    app:srcCompat="@drawable/shape_circle" />
+
+                                <TextView
+                                    android:id="@+id/count5"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:gravity="center"
+                                    android:text="@string/c99"
+                                    android:textColor="@color/mdtp_white"
+                                    android:textSize="@dimen/text_size_large" />
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/v5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:gravity="center"
+                                android:text="@string/iron"
+                                android:textSize="@dimen/text_size_large" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/day1"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.6"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white">
+
+                    </View>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:baselineAligned="false">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white">
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/mdtp_white"
+                        android:backgroundTint="@color/mdtp_white">
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

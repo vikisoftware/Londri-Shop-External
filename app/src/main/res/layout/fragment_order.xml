@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+     >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/your_order"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:animateLayoutChanges="true"
+            android:scrollbars="none"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="40dp">
+                <LinearLayout
+                    android:id="@+id/filters"
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent">
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/addFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_shape_bg"
+                    android:drawableEnd="@drawable/ic_add_circle_black_24dp"
+                    android:gravity="center"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:paddingEnd="5dp"
+                    android:textSize="@dimen/font_14"
+                    android:text="@string/add_filter" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="@dimen/length_5"
+            android:layout_marginEnd="@dimen/length_5"
+            />
+
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/intro_iv"
+        android:layout_above="@+id/hey_amigo_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_width="306dp"
+        android:layout_height="185dp"
+        android:src="@drawable/group"
+        android:layout_marginBottom="100dp"/>
+
+    <TextView
+        android:id="@+id/hey_amigo_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hey_amigo"
+        android:layout_above="@+id/intro_message_tv"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_20"
+        android:layout_marginBottom="14dp"/>
+
+    <TextView
+        android:id="@+id/intro_message_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enjoy Your Time together,\nOutsource Your Laundry."
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="86dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        />
+
+</RelativeLayout>

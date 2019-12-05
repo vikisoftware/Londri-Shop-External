@@ -1,0 +1,40 @@
+<resources>
+    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="text_size_xsmall">10sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">15sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="margin_xsmall">2dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_medium">7dp</dimen>
+    <dimen name="margin_large">10dp</dimen>
+    <dimen name="margin_xlarge">15dp</dimen>
+    <dimen name="margin_xxlarge">20dp</dimen>
+    <dimen name="padding_xsmall">2dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_medium">7dp</dimen>
+    <dimen name="padding_large">10dp</dimen>
+    <dimen name="padding_xlarge">15dp</dimen>
+    <dimen name="text_size_label_medium">25sp</dimen>
+    <dimen name="text_size_label_mediumx">30sp</dimen>
+    <dimen name="text_size_label_mediumxx">40sp</dimen>
+    <dimen name="text_size_label">60sp</dimen>
+    <dimen name="button_size_large">200dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="elevation_small">1dp</dimen>
+    <dimen name="elevation_medium">3dp</dimen>
+    <dimen name="elevation_large">5dp</dimen>
+    <dimen name="trasform_z_small">1dp</dimen>
+    <dimen name="trasform_z_medium">3dp</dimen>
+    <dimen name="trasform_z_large">5dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+</resources>

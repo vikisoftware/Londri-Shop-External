@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="50dp"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/white_circle_rl"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/button_shape_round_white"
+        android:translationZ="2dp"
+        android:elevation="2dp"
+        />
+
+
+    <TextView
+        android:id="@+id/day_tv"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="S"
+        android:elevation="4dp"
+        android:background="@null"
+        android:gravity="center"
+        />
+
+    <View
+        android:layout_toEndOf="@+id/day_tv"
+        android:layout_width="@dimen/length_10"
+        android:layout_height="match_parent"
+        />
+
+
+</RelativeLayout>

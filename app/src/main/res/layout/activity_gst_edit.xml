@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GstEditActivity"
+    android:background="@color/white">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="?attr/actionBarSize">
+                    <ImageView
+                        android:id="@+id/back"
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/zero"
+                        android:src="@drawable/ic_cancel"
+                        android:tint="@color/black"
+                        android:visibility="visible"
+                        android:layout_marginStart="20dp"/>
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="13dp"
+                        android:alpha="0.3"
+                        android:background="@drawable/button_shape_round_white"
+                        android:backgroundTint="#F2994A"
+                        android:contentDescription="@string/zero"
+                        android:elevation="2dp"
+                        android:translationZ="2dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/update_gst"
+                        android:layout_centerInParent="true"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginStart="@dimen/length_20"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="@dimen/margin_large"
+                        android:gravity="center"
+                        android:textSize="@dimen/length_20"/>
+                </RelativeLayout>
+
+            <EditText
+                android:singleLine="true"
+                android:id="@+id/gstNo"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/grey_stroke"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_margin="20dp"
+                android:hint="@string/gst_no"
+                android:textSize="@dimen/font_16"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_600"
+                android:layout_marginStart="7dp"
+                android:layout_marginEnd="7dp" />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/note_gst"
+                android:fontFamily="@font/muli_bold"
+                android:textSize="16sp"
+                android:textColor="@color/red_400"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/note_gst_detail"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
