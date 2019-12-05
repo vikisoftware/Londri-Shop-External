@@ -22,7 +22,7 @@ repositories {
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.vikisoft.londrishops"
+        applicationId "com.vikisoft.externallondrishops"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 9

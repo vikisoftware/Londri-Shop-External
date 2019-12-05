@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.vikisoft.londrishops">
+    package="com.vikisoft.externallondrishops">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -30,10 +30,10 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="m">
-        <activity android:name=".activity.GstEditActivity"></activity>
-        <activity android:name=".activity.UpdatePrice" />
+        <activity android:name="com.vikisoft.externallondrishops.activity.GstEditActivity"></activity>
+        <activity android:name="com.vikisoft.externallondrishops.activity.UpdatePrice" />
 
-        <service android:name=".helper.firebaseservice.MyFirebaseMessagingService">
+        <service android:name="com.vikisoft.externallondrishops.helper.firebaseservice.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESS  AGING_EVENT" />
             </intent-filter>
@@ -47,16 +47,16 @@
             android:resource="@color/colorAccent" />
 
         <activity
-            android:name=".activity.OTPVerificationActivity"
+            android:name="com.vikisoft.externallondrishops.activity.OTPVerificationActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
-            android:name=".activity.NewLoginActivity"
+            android:name="com.vikisoft.externallondrishops.activity.NewLoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.PlaceSearchActivity"
+            android:name="com.vikisoft.externallondrishops.activity.PlaceSearchActivity"
             android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -77,11 +77,11 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".activity.ShopMarckerActivity"
+            android:name="com.vikisoft.externallondrishops.activity.ShopMarckerActivity"
             android:label="@string/title_activity_shop_marcker"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.WelcomeActivity"
+            android:name="com.vikisoft.externallondrishops.activity.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -90,35 +90,35 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ServicePrice"
+            android:name="com.vikisoft.externallondrishops.activity.ServicePrice"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.BankDeailsActivity"
+            android:name="com.vikisoft.externallondrishops.activity.BankDeailsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.OrderDetailsActivity"
+            android:name="com.vikisoft.externallondrishops.activity.OrderDetailsActivity"
             android:screenOrientation="portrait" />
 
         <service
-            android:name=".helper.OrderService"
+            android:name="com.vikisoft.externallondrishops.helper.OrderService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="com.vikisoft.externallondrishops.activity.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.EditAddressActivity"
+            android:name="com.vikisoft.externallondrishops.activity.EditAddressActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.ProfileEditActivity"
+            android:name="com.vikisoft.externallondrishops.activity.ProfileEditActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.HomeActivity"
+            android:name="com.vikisoft.externallondrishops.activity.HomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.ViewClothsActivity" />
-        <activity android:name=".activity.SettingsActivity" />
-        <activity android:name=".activity.PreviousTransactionActivity" />
+        <activity android:name="com.vikisoft.externallondrishops.activity.ViewClothsActivity" />
+        <activity android:name="com.vikisoft.externallondrishops.activity.SettingsActivity" />
+        <activity android:name="com.vikisoft.externallondrishops.activity.PreviousTransactionActivity" />
 
         <meta-data
             android:name="io.fabric.ApiKey"
